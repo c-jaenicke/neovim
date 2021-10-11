@@ -1,4 +1,4 @@
-"--------------------------------------------------------------------------------------------------
+"###################################################################################################
 "                                 _
 "  _ __     ___    ___   __   __ (_)  _ __ ___
 " | '_ \   / _ \  / _ \  \ \ / / | | | '_ ` _ \
@@ -6,20 +6,14 @@
 " |_| |_|  \___|  \___/    \_/   |_| |_| |_| |_|
 "
 " neovim configuration file
-"--------------------------------------------------------------------------------------------------
-
-
-
+"###################################################################################################
 " set script encoding
 scriptencoding utf8
 
-
-
-"-------------------------------------------------------------------------
+"###################################################################################################
 " PLUGINS
 " managed using vim-plug
-"-------------------------------------------------------------------------
-
+"###################################################################################################
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.config/nvim/plugged')
 
@@ -44,12 +38,9 @@ Plug 'raimondi/delimitmate'
 " List ends here
 call plug#end()
 
-
-
-"-------------------------------------------------------------------------
+"###################################################################################################
 " PLUGIN SETTINGS
-"-------------------------------------------------------------------------
-
+"###################################################################################################
 " Vim-Indent-Guides
 let g:indent_guides_enable_on_vim_startup = 1
 
@@ -66,10 +57,9 @@ let g:syntastic_check_on_wq = 0
 
 
 
-"-------------------------------------------------------------------------
-" STATUSLINE
-"-------------------------------------------------------------------------
-
+"###################################################################################################
+" CUSTOM STATUSLINE
+"###################################################################################################
 set statusline=                                 " Clear line
 set statusline+=\--\                            " Divider
 set statusline+=%r                              " Display read only
@@ -86,21 +76,16 @@ set statusline+=%=                              " Seperate left and right part o
 set statusline+=\ [Enc:%{&fenc}]                " Display file encoding
 set statusline+=\ [Format:%{&ff}]               " Display file format
 set statusline+=\ --\                           " Divider
+set statusline+=\ Pos:%c                       " Display current line number
 set statusline+=\ Line:%l                       " Display current line number
-set statusline+=\ Total:%L                      " Display total number of lines
+set statusline+=\/%L                      " Display total number of lines
 set statusline+=\ --\                           " Divider
 
-
-
-"-------------------------------------------------------------------------
+"###################################################################################################
 " CUSTOM SETTINGS
-"-------------------------------------------------------------------------
-
+"###################################################################################################
 " system clipboard (requires +clipboard)
 set clipboard^=unnamed,unnamedplus
-
-
-
 set modeline          " enable vim modelines
 set hlsearch          " highlight search items
 set incsearch         " searches are performed as you type
@@ -113,6 +98,8 @@ set softtabstop=4     " spaces to enter for each tab
 set shiftwidth=4      " amount of spaces for indentation
 set shortmess+=aAcIws " Hide or shorten certain messages
 set showmode          " Show current mode vim is in
+set colorcolumn=+1
+set textwidth=100
 
 " map leader to ,
 let g:mapleader = ","
@@ -126,12 +113,9 @@ filetype plugin on
 " enable syntax highlighting
 syntax enable
 
-
-
-"-------------------------------------------------------------------------
-" NO IDEA
-"-------------------------------------------------------------------------
-
+"###################################################################################################
+" settings i have not checked yet and idk what they do 
+"###################################################################################################
 " local keyword jump
 nnoremap <Leader>fw
     \ [I:let b:jump = input('Go To: ') <Bar>
